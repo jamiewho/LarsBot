@@ -5,6 +5,8 @@ const request = require("request");
 
 const bot = new Discord.Client({ disableEveryone: true });
 
+
+//the bot status message
 bot.on("ready", async () => {
   console.log(`Bot is ready! ${bot.user.username}`);
   if (botsettings.activity.streaming == true) {
@@ -12,6 +14,8 @@ bot.on("ready", async () => {
     bot.user.setStatus("online");
   }
 
+  //creates link in your console so you can invite the bot
+  
   try {
     let link = await bot.generateInvite(["ADMINISTRATOR"]);
     console.log(link);
